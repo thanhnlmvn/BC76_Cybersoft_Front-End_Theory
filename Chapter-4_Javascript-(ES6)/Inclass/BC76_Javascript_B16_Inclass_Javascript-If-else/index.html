@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS v5.3.8 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Bài tập về cấu trúc điều kiện (if)</h2>
+      <!-- bs5-form-input -->
+      <div class="mb-3">
+        <label for="thoiGianLam" class="form-label">Thời gian làm</label>
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id="thoiGianLam"
+          aria-describedby="helpId"
+          placeholder="Vui lòng nhập thời gian làm"
+        />
+      </div>
+      <button class="btn btn-dark">Tính tiền lương</button>
+      <p class="ketQua bg-danger bg-opacity-75 p-2 text-white mt-3"></p>
+    </div>
+    <hr />
+
+    <div class="container">
+      <h2>Bài tập cấu trúc điều kiện if else</h2>
+      <div class="mb-3">
+        <label for="soTienAn" class="form-label">Số tiền ăn</label>
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id="soTienAn"
+          aria-describedby="helpId"
+          placeholder=""
+        />
+      </div>
+      <div class="mb-3">
+        <label for="soNguoi" class="form-label">Số người</label>
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id="soNguoi"
+          aria-describedby="helpId"
+          placeholder=""
+        />
+      </div>
+      <button class="btn btn-primary">Tính tiền ăn</button>
+      <p class="ketQua2 alert alert-danger mt-3"></p>
+    </div>
+    <hr />
+
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="card">
+            <div class="card-header">
+              <h4>Tìm số lớn nhất</h4>
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="number1" class="form-label">Number 1</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="number1"
+                  aria-describedby="helpId"
+                  placeholder=""
+                />
+              </div>
+              <div class="mb-3">
+                <label for="number2" class="form-label">Number 2</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="number2"
+                  aria-describedby="helpId"
+                  placeholder=""
+                />
+              </div>
+              <button class="btn btn-success" id="btnTimSLN">Tìm SLN</button>
+            </div>
+            <div class="card-footer text-body-secondary" id="outputTimSLN">
+              Footer
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h4>
+            Viết chương trình nhập vào thông tin 1 mặt hàng Tên, số lượng, đơn
+            giá. Tính và xuất tiền phải trả dựa theo nguyên tắc: Nếu mua với số
+            lượng 50 - 100 sẽ được giảm 8%, mua với số lượng trên 100 thì số
+            lượng từ 100 trở đi sẽ được giảm 12%
+          </h4>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="tenMatHang" class="form-label">Tên mặt hàng</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="tenMatHang"
+              aria-describedby="helpId"
+              placeholder="Vui lòng nhập tên mặt hàng"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="soLuongMua" class="form-label">Số lượng mua</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="soLuongMua"
+              aria-describedby="helpId"
+              placeholder="Vui lòng nhập số lượng"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="donGia" class="form-label">Đơn giá</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="donGia"
+              aria-describedby="helpId"
+              placeholder="Vui lòng nhập đơn giá"
+            />
+          </div>
+          <button class="btn btn-outline-success" id="btnTinhTienMuaHang">
+            Tính tiền đơn hàng
+          </button>
+        </div>
+        <div class="card-footer" id="kqTienMuaHang"></div>
+      </div>
+    </div>
+    <hr />
+
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h4>
+            Viết chương trình nhập: Họ Tên, Điểm toán, Điểm lý, Điểm hóa
+            <br />
+            Tính và xuất kết quả loại theo bảng sau:
+            <ul>
+              <li>Loại Giỏi: Điểm TB >= 8,5</li>
+              <li>Loại Khá: 6,5 <= Điểm TB < 8,5</li>
+              <li>Loại TB: 5 <= Điểm TB < 6,5</li>
+              <li>Loại Yếu: Điểm TB < 5</li>
+            </ul>
+          </h4>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="hoTenHS" class="form-label">Họ tên học sinh</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="hoTenHS"
+              aria-describedby="helpId"
+              placeholder="Vui lòng nhập họ tên học sinh"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="diemToan" class="form-label">Điểm toán</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="diemToan"
+              aria-describedby="helpId"
+              placeholder="Vui lòng nhập điểm toán"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="diemLy" class="form-label">Điểm lý</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="diemLy"
+              aria-describedby="helpId"
+              placeholder="Vui lòng nhập điểm lý"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="diemHoa" class="form-label">Điểm hóa</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="diemHoa"
+              aria-describedby="helpId"
+              placeholder="Vui lòng nhập điểm hóa"
+            />
+          </div>
+          <button class="btn btn-outline-success" id="btnTinhDiemTB">
+            Tính điểm TB
+          </button>
+        </div>
+        <div class="card-footer" id="kqDiemTB"></div>
+      </div>
+    </div>
+    <hr />
+
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h4>Bài tập cấu trúc Switch case</h4>
+          <p class="alert alert-success">
+            Một nhà hàng mở quá ăn và yêu cầu viết cho họ một chương trình tính
+            số tiền ăn của mỗi khách hàng, biết rằng ở đây sẽ được cung cấp 3
+            giá trị bao gồm số lượng người, tổng số tiền và số % giảm giá. Hãy
+            tính toán với 3 dữ kiện được cung cấp và trả kết quả cho người dùng
+            biết về số tiền mỗi người cần thanh toán (yêu cầu có sử dụng cấu
+            trúc điều kiện switch case). Nếu như số lượng khách đủ 3 người thì
+            bonus giảm thêm 400k còn nếu đủ 5 người thì sẽ giảm thêm 1tr
+          </p>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="soNguoi1" class="form-label">Nhập số người</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="soNguoi1"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+          </div>
+          <div class="mb-3">
+            <label for="soTienAn1" class="form-label">Nhập tổng số tiền</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="soTienAn1"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+          </div>
+          <div class="mb-3">
+            <label for="soTienGiamGia" class="form-label"
+              >Số tiền giảm giá</label
+            >
+            <select
+              class="form-select form-select-lg"
+              name=""
+              id="soTienGiamGia"
+            >
+              <option value="10">10%</option>
+              <option value="20">20%</option>
+              <option value="30">30%</option>
+              <option value="40">40%</option>
+            </select>
+          </div>
+          <button class="btn btn-dark" id="btnTinhTien">Tính tiền</button>
+        </div>
+        <div class="card-footer text-body-secondary">
+          <p class="alert alert-success" id="kqTinhTien"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- MAIN JS -->
+    <script src="./index.js"></script>
+  </body>
+</html>

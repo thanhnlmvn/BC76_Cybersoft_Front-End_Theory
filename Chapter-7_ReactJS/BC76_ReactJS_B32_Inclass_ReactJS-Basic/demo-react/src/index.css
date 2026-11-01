@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* @theme cho phép config lại class và giá trị của tailwind */
+@theme {
+  --spacing-section-padding: 30px;
+}
+
+/* global css */
+.my-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+img {
+  /* @apply cho phép sử dụng các class của tailwind */
+  /* @apply h-24; */
+}
+
+@utility container {
+  @apply mx-auto;
+}
+
+.my-active {
+  @apply !text-red-500 bg-black;
+}

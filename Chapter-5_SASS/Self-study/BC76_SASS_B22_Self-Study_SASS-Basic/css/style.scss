@@ -1,0 +1,135 @@
+// VARIABLE (Biến)
+/*
+  Quy tắc đặt tên biến
+  - Tên biến phù hợp với ngữ cảnh (section, tiêu đề, box, ...)
+  - Ngăn cách dấu gạch ngang ở giữa
+  - Vị trí áp dụng: bottom, right, left, top
+  - Thuộc tính áp dụng hoặc là màu
+*/
+$about-heading-color: red;
+$about-heading-font-size: 40px;
+$about-heading-letter-spacing: 10px;
+$about-heading-margin-top: 40px;
+
+h1 {
+  color: $about-heading-color;
+  font-size: $about-heading-font-size;
+  letter-spacing: $about-heading-letter-spacing;
+  margin-top: $about-heading-margin-top;
+}
+
+// GOM NHÓM (nested route)
+/*
+  Nested route sẽ giúp gom nhóm các thành phần css lại cùng 1 khu vực quản lý tránh viết css lại nhiều lần 
+  
+  // Parent selector (&)
+  Thêm dấu & ở đằng trước một thành phần tử con nào, thì nó sẽ mang theo toàn bộ vùng chọn của một phần tử mẹ đứng trước đó 
+
+  // Gom nhóm thuộc tính css
+  Gom nhóm các thuộc tính có cùng loại tiền tố. Cách sử dụng khai báo từ khóa trước dấu (-) của thuộc tính css (cách này ít sử dụng)
+
+*/
+
+.header {
+  h2 {
+    // Gom nhóm thuộc tính css
+    font: {
+      size: 40px;
+      weight: normal;
+    }
+    color: blue;
+
+    // Parent selector
+    &:hover {
+      color: yellow;
+    }
+  }
+  span {
+    color: red;
+    letter-spacing: 10px;
+  }
+  p {
+    color: green;
+    margin-top: 10px;
+  }
+}
+
+// Mixin - @mixin_tên_mix (Giống hàm trong lặp trình)
+/*
+  - Mixin là một cơ chế khá phổ biến trong SASS mà nếu bạn biết cách áp dụng thì sẽ rất có lợi khi viết css
+  - Công dụng của nó là mang nhiều thuộc tính mà bạn đã quy ước trong một mix nào đó bỏ vào một thành phần bất kỳ mà không cần viết lại các thuộc tính đó. Thuận tiện chỉnh sửa và tái sử dụng. 
+  
+  // Tham số
+  - Mixin cho phép sử dụng tham số để truyền vào linh hoạt hơn khả năng sử dụng mixin truyền các giá trị mà người dùng cần
+*/
+@mixin heading-style($color, $fs, $ls) {
+  color: $color;
+  font-size: $fs;
+  letter-spacing: $ls;
+}
+
+// .mixin {
+//   h1 {
+//     @include heading-style(blue, 60px, 30px);
+//   }
+// }
+
+.footer {
+  h1 {
+    @include heading-style(red, 40px, 10px);
+  }
+}
+
+// Extends - kế thừa @extend tên_class
+/*
+  - Đây là một tính năng quan trọng mà bạn cần hiểu càng sớm càng tốt vì sau này sẽ dùng rất nhiều, nhất là trong khi sử dụng với một css framework
+  - Tính năng kế thừa này nghĩa là bạn chỉ định cho một thành phần nào đó thừa hưởng tất cả các thuộc tính của một class (hoặc vùng chọn nào đó) bất kỳ khai báo sẵn
+*/
+.heading {
+  font-size: 60px;
+  font-weight: normal;
+  color: blue;
+}
+
+// .mixin {
+//   h1 {
+//     @extend .heading;
+//     background-color: red;
+//     color: green;
+//   }
+// }
+
+// Cấu trúc điều kiện (if else)
+$heading-color: violet;
+
+.mixin {
+  h1 {
+    color: $heading-color;
+    @if $heading-color == red {
+      background-color: green;
+    } @else if $heading-color == blue {
+      background-color: grey;
+    } @else if $heading-color == yellow {
+      background-color: red;
+    } @else {
+      background-color: black;
+    }
+  }
+}
+
+// Vòng lặp (for)
+// @for $thamSo from 1 through 3 {
+//   .heading-#{$thamSo} {
+//     font-size: 20px * $thamSo;
+//   }
+// }
+
+// Vòng lặp (while)
+$size: 1;
+
+@while $size < 4 {
+  .heading-#{$size} {
+    font-size: 60px / $size;
+  }
+  $size: $size + 1;
+}

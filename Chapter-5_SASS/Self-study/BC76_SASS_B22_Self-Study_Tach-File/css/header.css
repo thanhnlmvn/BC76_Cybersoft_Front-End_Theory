@@ -1,0 +1,21 @@
+header h1 {
+  color: red;
+  font-size: 60px;
+}
+@media screen and (max-width: 992px) {
+  header h1 {
+    color: yellow;
+  }
+}
+@media screen and (max-width: 768px) {
+  header h1 {
+    color: green;
+    font-size: 90px;
+  }
+}
+@media screen and (max-width: 576px) {
+  header h1 {
+    color: blue;
+    font-size: 30px;
+  }
+}/*# sourceMappingURL=header.css.map */

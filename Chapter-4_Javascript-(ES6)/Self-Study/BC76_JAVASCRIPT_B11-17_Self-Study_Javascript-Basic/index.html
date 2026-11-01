@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CSS v5.3.8 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome 6 CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container" style="margin-bottom: 100px">
+      <h3 id="title">Cybersoft</h3>
+      <br />
+      <input type="text " class="form-control w-25" id="txt" value="123" />
+      <br />
+      <input
+        type="number "
+        class="form-control w-25"
+        id="number"
+        value="1000000"
+      />
+      <br />
+      <div class="w-25">
+        <img src="./img/images.jpg" id="hinhAnh" alt="" class="w-100" />
+      </div>
+      <br />
+      <!-- Sự kiện onclick trong html -->
+      <button class="btn btn-success" onclick="sayHello()">Say hello</button>
+
+      <button class="btn btn-success" id="btnHello">Say hello 2</button>
+
+      <hr />
+
+      <div class="form-group">
+        <p>Nhập vào 1 giá trị</p>
+        <input type="text" class="form-control w-25" id="giaTriNhap" />
+        <br />
+        <button id="btnHienThi" class="btn btn-success">Hiển thị</button>
+        <div class="mt-2 text-success">
+          <p>Kết quả: <span id="ketQuaHienThi"></span></p>
+        </div>
+      </div>
+
+      <hr />
+
+      <h4>
+        Bài tập: nhập vào số tiền lương (1h) và số giờ làm in ra tổng lương bằng
+        số giờ nhân tiền lương
+      </h4>
+      <div class="form-group">
+        <label for="tienLuong1h">Tiền lương 1h</label>
+        <input type="number" class="form-control w-25" id="tienLuong1h" />
+
+        <br />
+
+        <label for="soGioLam">Số giờ làm</label>
+        <input type="number" class="form-control w-25" id="soGioLam" />
+
+        <br />
+
+        <button id="btnTinhTienLuong" class="btn btn-success">Tính tiền</button>
+
+        <div class="mt-2 alert alert-success">
+          <span>Kết quả: <span id="tongLuong"></span></span>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="card w-25 mx-auto my-3">
+        <div class="card-header">
+          <h3 class="text-center">Đăng nhập</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="">Tài khoản</label>
+            <input type="text" class="form-control" id="taiKhoan" />
+          </div>
+          <div class="form-group">
+            <label for="">Mật khẩu</label>
+            <input type="password" class="form-control" id="matKhau" />
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <button id="btnDangNhap" class="btn btn-success">Đăng nhập</button>
+          <div class="mt-2">
+            <span id="ketQuaDangNhap">Kết quả đăng nhập</span>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="d-flex justify-content-center my-3">
+        <div class="card w-50">
+          <div
+            class="card-header text-center"
+            style="background-color: brown; color: white"
+          >
+            <span>TÍNH TIỀN TIP</span>
+          </div>
+
+          <div class="card-body">
+            <div class="form-group">
+              <label for="tongTienThanhToan">Tổng tiền thanh toán</label>
+              <input
+                type="number"
+                class="form-control"
+                id="tongTienThanhToan"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="mt-3" for="phanTramTip"
+                >Bạn muốn tip bao nhiêu</label
+              >
+              <select name="" id="phanTramTip" class="form-control">
+                <option value="">Chọn để tip</option>
+                <option value="30">30% - Tuyệt</option>
+                <option value="20">20% - Tốt</option>
+                <option value="15">15% - Tạm ổn</option>
+                <option value="10">10% - Tồi</option>
+                <option value="5">5% - Thật tệ</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="mt-3" for="soNguoiTip">Số người tip</label>
+              <input type="number" class="form-control" id="soNguoiTip" />
+            </div>
+          </div>
+
+          <div class="card-footer text-center">
+            <button class="btn btn-danger" id="btnTinhTienTip">TÍNH NÀO</button>
+            <br />
+            <span style="font-size: 25px">Số tiền tip trên người</span>
+            <br />
+            <span id="tienTipTrenNguoi" class="display-4">10$</span>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="card w-50 mx-auto my-3">
+        <div class="card-header">
+          <h3 class="text-center">Tính doanh thu rạp phim</h3>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="tenPhim" class="form-label">Tên phim</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="tenPhim"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+          </div>
+          <div class="mb-3">
+            <label for="veNguoiLon" class="form-label"
+              >Số vé người lớn được bán</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="veNguoiLon"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+          </div>
+          <div class="mb-3">
+            <label for="veTreEm" class="form-label"
+              >Số vé trẻ em được bán</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="veTreEm"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+          </div>
+          <div class="mb-3">
+            <label for="phanTramTuThien" class="form-label"
+              >Phần trăm trích từ thiện</label
+            >
+            <select name="" id="phanTramTuThien" class="form-control">
+              <option value="">Vui lòng chọn</option>
+              <option value="5">5%</option>
+              <option value="10">10%</option>
+              <option value="15">15%</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-footer text-center p-3">
+          <button class="btn btn-success" id="btnTinhTienPhim">Tính</button>
+          <p id="kqDoanhThuRapPhim"></p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="card w-50 mx-auto my-3">
+        <div class="card-header text-center">
+          <h4>Tính giá trị tuyệt đối của 1 số</h4>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="iSo" class="form-label">Nhập vào 1 số</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="iSo"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+            <br />
+
+            <button class="btn btn-success" id="btnTinhGiaTriTuyetDoi">
+              Tính giá trị tuyệt đối
+            </button>
+
+            <p class="alert alert-success mt-4" id="kqGiaTriTuyetDoi"></p>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+      <div class="card w-50 mx-auto my-3">
+        <div class="card-header text-center">
+          <h4>
+            Chương trình cho phép nhập vào 1 số => In ra màn hình cho biết số đó
+            là số chẵn hay số lẽ
+          </h4>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="iSo-2" class="form-label">Nhập vào 1 số</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="iSo-2"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+            <br />
+
+            <button class="btn btn-success" id="btnKqSoChanLe">
+              Kiểm tra số
+            </button>
+
+            <p class="alert alert-success mt-4" id="kqSoChanLe"></p>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+      <div class="card w-50 mx-auto my-3">
+        <div class="card-header text-center">
+          <h4>
+            Nhập vào điểm trung bình. Nếu lớn hơn hoặc = 5 thì in ra đậu ngược
+            lại bé hơn 5 in ra rớt
+          </h4>
+        </div>
+
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="diemTb" class="form-label"
+              >Nhập vào điểm trung bình</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="diemTb"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+          </div>
+          <button class="btn btn-success" id="btnXepLoai">Xếp loại</button>
+          <p class="alert alert-success mt-4">
+            Kết quả: <span id="kqXepLoai"></span>
+          </p>
+        </div>
+      </div>
+
+      <hr />
+      <div class="card w-50 mx-auto my-3">
+        <div class="card-header">
+          <h4>
+            Cho người dùng nhập vào 2 số. Tìm số lớn nhất và in ra kết quả
+          </h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="mb-3 col-6">
+              <label for="iSoThu1" class="form-label">Nhập vào số thứ 1</label>
+              <input
+                type="text"
+                class="form-control"
+                name=""
+                id="iSoThu1"
+                aria-describedby="helpId"
+                placeholder=""
+              />
+            </div>
+            <div class="mb-3 col-6">
+              <label for="iSoThu2" class="form-label">Nhập vào số thứ 2</label>
+              <input
+                type="text"
+                class="form-control"
+                name=""
+                id="iSoThu2"
+                aria-describedby="helpId"
+                placeholder=""
+              />
+            </div>
+          </div>
+          <button class="btn btn-success" id="btnTimSo">Tìm số lớn nhất</button>
+          <p class="alert alert-success mt-4" id="kqTimSo"></p>
+        </div>
+      </div>
+
+      <hr />
+      <div class="card w-50 mx-auto my-3">
+        <div class="card-header">
+          <h4>
+            Viết chương trình cho phép người dùng nhập vào số giờ làm và tiền
+            công 1 giờ Yêu cầu: Tính tiền công dựa trên số giờ làm theo công
+            thức sau
+          </h4>
+          <p class="alert alert-danger">
+            Nếu số giờ làm <= 40: Tiền công = số giờ làm * tiền công 1h
+            <br />
+            Nếu số giờ làm > 40: Tiền công = 40 * tiền công 1 giờ làm + (số giờ
+            làm - 40) * tiền công 1 giờ làm * 1.5
+          </p>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="soGioLamTrenTuan" class="form-label"
+              >Nhập số giờ làm / tuần</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="soGioLamTrenTuan"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+          </div>
+          <div class="mb-3">
+            <label for="tienCong1h" class="form-label"
+              >Tiền công trên 1 giờ</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="tienCong1h"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+          </div>
+          <button class="btn btn-outline-success" id="btnTinhTienLuong2">
+            Tính tiền lương
+          </button>
+          <p class="mt-3 alert alert-success" id="kqTienLuong"></p>
+        </div>
+      </div>
+
+      <hr />
+      <div class="card w-50 mx-auto my-3">
+        <div class="card-header">
+          <h4>
+            Viết chương trình cho phép người dùng nhập vào điểm toán, điểm lý,
+            điểm hóa. Yêu cầu in ra điểm trung bình và xếp loại
+          </h4>
+          <p class="alert alert-danger">
+            Trong đó xếp loại được tính theo điểm trung bình
+            <br />
+            Từ 0 đến < 5: Không dạt
+            <br />
+            Từ >= 5 đến < 8: Đạt
+            <br />
+            Từ >= 8 đến 10: Giỏi
+          </p>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="mb-3 col-4">
+              <label for="diemToan" class="form-label">Nhập điểm Toán</label>
+              <input
+                type="text"
+                class="form-control"
+                name=""
+                id="diemToan"
+                aria-describedby="helpId"
+                placeholder=""
+              />
+            </div>
+            <div class="mb-3 col-4">
+              <label for="diemLy" class="form-label">Nhập điểm Lý</label>
+              <input
+                type="text"
+                class="form-control"
+                name=""
+                id="diemLy"
+                aria-describedby="helpId"
+                placeholder=""
+              />
+            </div>
+            <div class="mb-3 col-4">
+              <label for="diemHoa" class="form-label">Nhập điểm Hóa</label>
+              <input
+                type="text"
+                class="form-control"
+                name=""
+                id="diemHoa"
+                aria-describedby="helpId"
+                placeholder=""
+              />
+            </div>
+          </div>
+          <button class="btn btn-success" id="btnTinhDiemTb">Tính</button>
+          <p class="alert alert-success mt-4" id="kqDiemTb"></p>
+        </div>
+      </div>
+
+      <hr />
+      <div class="card w-50 mx-auto my-3">
+        <div class="card-header">
+          <h4>Viết chương trình đọc các số từ 1 - 4</h4>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="nhapSo" class="form-label">Nhập vào 1 số</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="nhapSo"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+          </div>
+          <button class="btn btn-success mb-4" id="btnDocSo">Đọc số</button>
+          <p class="alert alert-success" id="kqDocSo"></p>
+        </div>
+      </div>
+
+      <hr />
+      <div class="card w-50 mx-auto my-3">
+        <div class="card-header">
+          <h4>Viết hàm xuất thông tin lên giao diện</h4>
+        </div>
+        <div class="card_body p-4">
+          <p id="pThongTin" class="alert alert-success"></p>
+          <p id="sThongTin" class="alert alert-danger mt-2"></p>
+          <article id="aThongTin" class="alert alert-warning mt-2"></article>
+        </div>
+      </div>
+
+      <hr />
+      <div>
+        <h4>Viết chương trình tính điểm 2 khối thi đại học A,C</h4>
+        <div class="row mt-5">
+          <div class="col-4">
+            <span class="alert alert-danger">Khối A</span>
+            <div class="mt-5">
+              <div class="input-group my-4">
+                <label
+                  class="input-group-text btn btn-outline-danger"
+                  for="diemToan1"
+                  >Điểm Toán</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nhập vào điểm toán"
+                  id="diemToan1"
+                />
+              </div>
+              <div class="input-group my-4">
+                <label
+                  class="input-group-text btn btn-outline-danger"
+                  for="diemLy1"
+                  >Điểm Lý</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nhập vào điểm lý"
+                  id="diemLy1"
+                />
+              </div>
+              <div class="input-group my-4">
+                <label
+                  class="input-group-text btn btn-outline-danger"
+                  for="diemHoa1"
+                  >Điểm Hóa</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nhập vào điểm hóa"
+                  id="diemHoa1"
+                />
+              </div>
+              <div class="input-group my-4">
+                <label
+                  class="input-group-text btn btn-outline-danger"
+                  for="diemTb1"
+                  >Điểm Trung Bình</label
+                >
+                <input type="text" class="form-control" id="diemTb1" disabled />
+              </div>
+            </div>
+          </div>
+
+          <div class="offset-4 col-4">
+            <span class="alert alert-success">Khối C</span>
+            <div class="mt-5">
+              <div class="input-group my-4">
+                <label
+                  class="input-group-text btn btn-outline-success"
+                  for="diemVan2"
+                  >Điểm Văn</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nhập vào điểm văn"
+                  id="diemVan2"
+                />
+              </div>
+              <div class="input-group my-4">
+                <label
+                  class="input-group-text btn btn-outline-success"
+                  for="diemSu2"
+                  >Điểm Sử</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nhập vào điểm sử"
+                  id="diemSu2"
+                />
+              </div>
+              <div class="input-group my-4">
+                <label
+                  class="input-group-text btn btn-outline-success"
+                  for="diemDia2"
+                  >Điểm Địa</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nhập vào điểm địa"
+                  id="diemDia2"
+                />
+              </div>
+              <div class="input-group my-4">
+                <label
+                  class="input-group-text btn btn-outline-success"
+                  for="diemTb2"
+                  >Điểm Trung Bình</label
+                >
+                <input type="text" class="form-control" id="diemTb2" disabled />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-warning" id="btnTinhDiemTb2">Tính điểm</button>
+        </div>
+      </div>
+
+      <hr />
+      <div>
+        <h4>Xây dụng chức năng zoomIn zoomOut cho button bên dưới</h4>
+        <i class="fa-solid fa-house" style="font-size: 250px" id="home"></i>
+        <button class="btn btn-outline-success" id="zoomInHome">+</button>
+        <button class="btn btn-outline-success" id="zoomInOut">-</button>
+
+        <p class="mt-5" id="txtContent" style="font-size: 16px">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis
+          voluptate fugit, quibusdam qui ullam culpa laboriosam quas consequatur
+          doloribus esse, blanditiis dolor id porro deserunt cumque similique
+          asperiores delectus commodi!
+        </p>
+        <button class="btn btn-outline-success" id="zoomInText">+</button>
+        <button class="btn btn-outline-success" id="zoomOutText">-</button>
+      </div>
+
+      <hr />
+      <div>
+        <h4>
+          Cho phép người dùng nhập vào 1 số. In ra số thẻ div Hello Cybersoft
+          tương tự
+        </h4>
+        <div class="mb-3">
+          <label for="inThe" class="form-label">Nhập vào 1 số</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id="inThe"
+            aria-describedby="helpId"
+            placeholder=""
+          />
+        </div>
+        <button class="btn btn-success" id="btnInThe">In thẻ div</button>
+        <div id="danhSachIn" class="mt-4">
+          <div class="alert alert-success">Hello Cybersoft</div>
+          <div class="alert alert-success">Hello Cybersoft</div>
+        </div>
+      </div>
+
+      <hr />
+      <div>
+        <h4>Cho phép người dùng nhập vào 1 số tính giai thừa số đó</h4>
+        <div class="mb-3 w-25">
+          <label for="soGiaiThua" class="form-label">Nhập vào số</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id="soGiaiThua"
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <button class="btn btn-success mt-3" id="btnTinhGiaiThua">
+            Tính giai thừa
+          </button>
+        </div>
+        <p class="alert alert-danger" id="kqGiaiThua"></p>
+      </div>
+
+      <hr />
+      <div>
+        <h4>
+          Cho phép người dùng nhập vào 1 số tính tổng từ 1 -> n (số người dùng
+          nhập)
+        </h4>
+        <p class="alert alert-danger">
+          Ví dụ: Người dùng nhập vào số 7
+          <br />
+          Kết quả = 1 + 2 + 3 + 4 + 5 + 6 + 7
+        </p>
+        <div class="mb-3 w-25">
+          <label for="tongSo" class="form-label">Nhập vào số</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id="tongSo"
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <button class="btn btn-success mt-3" id="btnTinhTong">
+            Tính tổng
+          </button>
+        </div>
+        <p class="alert alert-danger" id="kqTinhTong"></p>
+      </div>
+
+      <hr />
+      <div>
+        <h4>
+          Cho phép người dùng nhập vào 1 số tính tổng từ 1 -> n (số người dùng
+          nhập). Tính tổng các số chẵn
+        </h4>
+        <p class="alert alert-primary">
+          Ví dụ: Người dùng nhập vào số 10
+          <br />
+          Kết quả = 2 + 4 + 6 + 8 + 10
+        </p>
+        <div class="mb-3 w-25">
+          <label for="tongSoChan" class="form-label">Nhập vào số</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id="tongSoChan"
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <button class="btn btn-primary mt-3" id="btnTinhTongSoChan">
+            Tính tổng
+          </button>
+        </div>
+        <p class="alert alert-primary" id="kqTinhTongSoChan"></p>
+      </div>
+
+      <hr />
+      <div>
+        <h4>
+          Cho phép người dùng nhập vào 1 số cho biết số đó có phải là số nguyên
+          tố hay không
+        </h4>
+        <p class="alert alert-warning">
+          Ví dụ: Người dùng nhập vào số 5
+          <br />
+          Kết quả = 5 là số nguyên tố
+        </p>
+        <div class="mb-3 w-25">
+          <label for="soNguyenTo" class="form-label">Nhập vào số</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id="soNguyenTo"
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <button class="btn btn-warning mt-3" id="btnTinhSoNguyenTo">
+            Kiểm tra số nguyên tố
+          </button>
+        </div>
+        <p class="alert alert-warning" id="kqTinhSoNguyenTo"></p>
+      </div>
+
+      <hr />
+      <div>
+        <h4>
+          Viết chương trình cho phép người dùng nhập vào 1 số in ra số ngôi sao
+          tương ứng
+        </h4>
+        <p class="alert alert-warning">
+          Ví dụ: Người dùng nhập vào số 5
+          <br />
+          Kết quả: * * * * *
+        </p>
+        <div class="mb-3 w-25">
+          <label for="soSao" class="form-label">Nhập vào số</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id="soSao"
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <button class="btn btn-warning mt-3" id="btnInSao">
+            In ngôi sao
+          </button>
+        </div>
+        <p class="alert alert-warning" id="kqInSao"></p>
+      </div>
+
+      <hr />
+      <div>
+        <h4>
+          Viết chương trình cho phép người dùng nhập vào số hàng và cột in ra
+          các ngôi sao như
+        </h4>
+        <p class="alert alert-warning">
+          Ví dụ: Người dùng nhập vào 3 hàng 5 cột
+          <br />
+          Kết quả:
+          <br />
+          * * * * *
+          <br />
+          * * * * *
+          <br />
+          * * * * *
+        </p>
+        <div class="mb-3 row">
+          <div class="col-6">
+            <label for="soHang" class="form-label">Nhập vào số hàng</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="soHang"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+          </div>
+          <div class="col-6">
+            <label for="soCot" class="form-label">Nhập vào số cột</label>
+            <input
+              type="text"
+              class="form-control"
+              name=""
+              id="soCot"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+          </div>
+        </div>
+        <button class="btn btn-warning mt-3" id="btnInCotHangSao">
+          In ngôi sao
+        </button>
+        <p class="alert alert-warning mt-4" id="kqInCotHangSao"></p>
+      </div>
+
+      <hr />
+      <div>
+        <h4>
+          Cho phép người dùng nhập vào 1 số. In ra các số nguyên tố nhỏ hơn hoặc
+          bằng số người dùng nhập
+        </h4>
+        <p class="alert alert-success">
+          Ví dụ: Người dùng nhập vào số 29
+          <br />
+          Kết quả: 2,3,4,5,7,11,13,17,23,29
+        </p>
+        <div class="mb-3 w-25">
+          <label for="soNguyenTo2" class="form-label">Nhập vào 1 số</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id="soNguyenTo2"
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <button class="btn btn-success mt-3" id="btnTinhSoNguyenTo2">
+            In kết quả
+          </button>
+        </div>
+        <p class="alert alert-success" id="kqTinhSoNguyenTo2"></p>
+      </div>
+
+      <hr />
+      <div>
+        <h4>Array lý thuyết:</h4>
+        <p id="hoTen" class="badge text-bg-danger"></p>
+        <div id="content-array"></div>
+      </div>
+
+      <hr />
+      <div>
+        <h4>DOM: Sử dụng tagname (tên thẻ)</h4>
+        <section>1</section>
+        <section>2</section>
+        <section>3</section>
+      </div>
+
+      <hr />
+      <div>
+        <h4>DOM: Sử dụng className (class của thẻ)</h4>
+        <article class="txt">1</article>
+        <header class="txt">2</header>
+        <footer class="txt">3</footer>
+        <p class="txt">4</p>
+      </div>
+
+      <hr />
+      <div>
+        <h4>DOM: Sử dụng className (class của thẻ)</h4>
+        <article name="text-demo">1</article>
+        <header name="text-demo">2</header>
+        <footer name="text-demo">3</footer>
+        <p name="text-demo">4</p>
+      </div>
+
+      <hr />
+      <div>
+        <h4>DOM: querySelector</h4>
+        <p id="p-text" class="p-text">Hello cybersoft</p>
+        <p id="p1-text" class="p-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis
+          illum iste illo ab cumque alias quidem doloremque perspiciatis ad
+          atque consequatur dolore aliquid, quo, aspernatur odit explicabo
+          delectus minus enim voluptatum, nostrum amet ea. Nulla commodi
+          repellat quia illum magni velit ipsum obcaecati, libero facere
+          voluptates, tenetur deserunt, culpa repudiandae!
+        </p>
+        <button class="btn btn-success" id="btnSubmit">Sumit</button>
+      </div>
+
+      <hr />
+      <div>
+        <h4>DOM: querySelectorAll</h4>
+        <div class="card w-25">
+          <div class="card-header bg-black text-white">Đăng nhập</div>
+          <div class="card-body">
+            <form action="">
+              <div class="mb-3">
+                <label for="taiKhoan2" class="form-label">Tài khoản</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="taiKhoan2"
+                  aria-describedby="helpId"
+                  placeholder=""
+                />
+              </div>
+              <div class="mb-3">
+                <label for="matKhau2" class="form-label">Mật khẩu</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  name=""
+                  id="matKhau2"
+                  aria-describedby="helpId"
+                  placeholder=""
+                />
+              </div>
+              <button class="btn btn-success" id="btnDangNhap2" type="submit">
+                Đăng nhập
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- METHOD JS -->
+    <!-- Tái sử dụng các hàm đã build sẵn  -->
+    <script src="./js/common/method.js"></script>
+
+    <!-- MAIN JS -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

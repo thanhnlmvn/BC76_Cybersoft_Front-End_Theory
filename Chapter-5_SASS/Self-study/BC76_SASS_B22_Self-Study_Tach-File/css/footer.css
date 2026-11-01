@@ -1,0 +1,33 @@
+footer h1 {
+  color: green;
+  font-size: 60px;
+}
+@media screen and (max-width: 992px) {
+  footer h1 {
+    color: black;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer h1 {
+    color: blue;
+    font-size: 90px;
+  }
+}
+@media screen and (max-width: 576px) {
+  footer h1 {
+    color: grey;
+    font-size: 40px;
+  }
+}
+footer .khung-footer {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+@media screen and (max-width: 576px) {
+  footer .khung-footer {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+  }
+}/*# sourceMappingURL=footer.css.map */

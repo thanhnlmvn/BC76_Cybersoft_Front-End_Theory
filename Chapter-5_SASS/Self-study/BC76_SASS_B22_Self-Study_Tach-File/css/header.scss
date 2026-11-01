@@ -1,0 +1,20 @@
+header {
+  h1 {
+    color: red;
+    font-size: 60px;
+
+    @media screen and (max-width: 992px) {
+      color: yellow;
+    }
+
+    @media screen and (max-width: 768px) {
+      color: green;
+      font-size: 90px;
+    }
+
+    @media screen and (max-width: 576px) {
+      color: blue;
+      font-size: 30px;
+    }
+  }
+}
