@@ -1,0 +1,270 @@
+// GLOBAL CSS
+// reset CSS
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+// variable
+// Background-color
+$bg-background: #f6f9fe;
+
+// Color
+$color-blue-100: #2a72dc;
+$color-blue-200: #1d355e;
+$color-yellow-100: #f9d310;
+
+// Font-size
+$fs-logo: 24px;
+$fs-title-1: 60px;
+$fs-title-2: 34px;
+$fs-sub-title: 20px;
+$fs-p: 18px;
+
+// Mixin
+@mixin styleText($fs: 16px, $fw, $color) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $color;
+}
+
+@mixin styleButton($color, $bg-color, $hover: true, $box-shadow: false) {
+  padding: 15px 40px;
+
+  border: 2px solid $color-blue-100;
+  background-color: $bg-color;
+  color: $color;
+  transition: all 0.5s;
+  border-radius: 8px;
+  cursor: pointer;
+
+  @if $hover {
+    &:hover {
+      background-color: $color;
+      color: $bg-color;
+    }
+  }
+
+  @if $box-shadow {
+    box-shadow: 0 2px 4px #e2ebfc;
+  }
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+// HEADER CSS
+header {
+  padding: 30px 0;
+  background-color: #f5f9fe;
+  box-shadow: 0 2px 4px #e2ebfc;
+  position: relative;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header__logo {
+      a {
+        @include styleText($fs-logo, bold, $color-blue-100);
+        text-decoration: none;
+      }
+    }
+    nav {
+      ul {
+        list-style: none;
+        li {
+          display: inline;
+          margin-right: 20px;
+          position: relative;
+
+          a {
+            text-decoration: none;
+            text-transform: capitalize;
+            @include styleText($fw: 400, $color: $color-blue-200);
+            transition: all 0.5s;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background-color: $color-blue-100;
+            transition: all 0.5s;
+          }
+
+          &:hover {
+            a {
+              color: $color-blue-100;
+            }
+            &::before {
+              width: 100%;
+            }
+          }
+
+          &.active {
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: -10px;
+              left: 0;
+              width: 100%;
+              height: 3px;
+              background-color: $color-blue-100;
+            }
+
+            a {
+              color: $color-blue-100;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// BANNER CSS
+.banner {
+  background-image: url(./../image/product-header-bg.jpg);
+  height: 70vh;
+  background-size: cover;
+  background-position: center bottom;
+  padding-top: 50px;
+  .banner__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .banner__title {
+      h1 {
+        @include styleText($fs-title-1, bold, $color-blue-100);
+      }
+      p {
+        &:first-of-type {
+          @include styleText($fs-sub-title, bold, $color-blue-200);
+          margin: 10px 0 20px;
+        }
+
+        &:last-of-type {
+          @include styleText($fs-p, 400, $color-blue-200);
+          margin-bottom: 15px;
+        }
+      }
+      button {
+        &:first-of-type {
+          @include styleButton($color-blue-100, white);
+          margin-right: 10px;
+        }
+        &:last-of-type {
+          @include styleButton(white, $color-blue-100, $box-shadow: true);
+        }
+      }
+    }
+    .banner__img {
+      width: 50%;
+      img {
+        width: 90%;
+      }
+    }
+  }
+}
+
+// PRODUCT CSS
+.products {
+  padding: 50px 0;
+  h2 {
+    @include styleText($fs-title-2, bold, $color-blue-200);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .product__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    .product__item {
+      padding: 30px;
+      box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      cursor: pointer;
+      animation: zoomIn 2s linear 0s 1 forwards;
+      opacity: 0;
+
+      @for $i from 2 through 6 {
+        &:nth-child(#{$i}) {
+          animation-delay: ($i - 1) * 2s;
+        }
+      }
+
+      .product__bg {
+        img {
+          width: 100%;
+          box-shadow: 0 2px 4px #e2ebfc;
+          margin-bottom: 15px;
+        }
+        .product__title {
+          .product__name {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            h3,
+            p {
+              @include styleText(25px, bold, $color-blue-100);
+            }
+          }
+          p {
+            @include styleText($fw: bold, $color: $color-blue-200);
+            margin-bottom: 15px;
+          }
+          .product__buy {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            p {
+              color: $color-yellow-100;
+              i {
+                margin-right: 5px;
+              }
+            }
+            button {
+              @include styleButton(white, $color-blue-100);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ANIMATION CSS
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Ultility class
+@for $i from 1 through 100 {
+  .fs-#{$i} {
+    font-size: ($i) + px;
+  }
+}

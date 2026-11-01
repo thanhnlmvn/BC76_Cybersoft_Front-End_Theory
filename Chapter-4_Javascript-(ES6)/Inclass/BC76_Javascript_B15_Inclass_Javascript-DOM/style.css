@@ -1,0 +1,9 @@
+.text__green {
+  background-color: black;
+  color: green;
+}
+
+body.dark {
+  background-color: black;
+  color: white;
+}

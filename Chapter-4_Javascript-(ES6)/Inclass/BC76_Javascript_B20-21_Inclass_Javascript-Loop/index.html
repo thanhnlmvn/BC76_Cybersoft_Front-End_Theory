@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS v5.3.8 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Bài tập ví dụ về việc sử dụng vòng lặp while</h2>
+      <div>
+        <p>
+          Bài tập 1: Thực hiện tính toán kết quả tổng từ 1 đến N (N do người
+          dùng cung cấp)
+        </p>
+        <div class="mb-3">
+          <label for="soN" class="form-label">Số N</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id="soN"
+            aria-describedby="helpId"
+            placeholder="Nhập vào số N"
+          />
+          <button class="btn btn-dark my-3" id="btnBt1">
+            Tính toán kết quả
+          </button>
+          <p class="alert alert-success" id="kqBt1"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>Bài tập sử dụng vòng lặp do...while</h2>
+      <div class="mb-3">
+        <label for="soA" class="form-label">Số A</label>
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id="soA"
+          aria-describedby="helpId"
+          placeholder="Nhập vào số A"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="soB" class="form-label">Số B</label>
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id="soB"
+          aria-describedby="helpId"
+          placeholder="Nhập vào số B"
+        />
+      </div>
+      <button class="btn btn-primary">Kiểm tra kết quả</button>
+      <p class="alert alert-success mt-3" id="kqBt2"></p>
+    </div>
+
+    <div class="container">
+      <h2>Bài tập vòng lặp</h2>
+      <p>
+        Khách hàng yêu cầu thực hiện một tính năng là thực hiện tạo một nút
+        button, khi khách bấm vào sẽ tự động tạo ra cho khách 10 cái thẻ div,
+        với thẻ div nằm ở vị trí chẵn sẽ có màu nền là màu đỏ, còn thẻ div nằm ở
+        vị trí lẻ sẽ có nền là màu xanh là cây (sử dụng vòng lặp)
+      </p>
+
+      <button class="btn btn-success" id="btnBt3">Tạo thẻ</button>
+      <div id="theDiv"></div>
+    </div>
+
+    <div class="container">
+      <h2>Bài tập vòng lặp for</h2>
+      <p>BT 2. Tính tổng các số chẵn từ 1 đến n. Với n nhập từ người dùng</p>
+      <div class="mb-3">
+        <label for="so_N" class="form-label">Số N</label>
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id="so_N"
+          aria-describedby="helpId"
+          placeholder="Vui lòng nhập số N"
+        />
+        <button class="btn btn-success my-2" id="btnBtTinhTongChan">
+          Tính tổng
+        </button>
+        <p class="alert alert-success" id="kqBtTinhTongChan"></p>
+      </div>
+
+      <p>
+        BT 6. Viết chương trình nhập vào 2 số x, n, tính tổng:
+        S(n)=x+x^2+x^3+...+x^n (Sử dụng vòng lặp và hàm)
+      </p>
+      <div class="mb-3">
+        <label for="x" class="form-label">Số X</label>
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id="x"
+          aria-describedby="helpId"
+          placeholder="Vui lòng nhập X"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="n" class="form-label">Số N</label>
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id="n"
+          aria-describedby="helpId"
+          placeholder="Vui lòng nhập N"
+        />
+      </div>
+      <button class="btn btn-success" id="btnTinhTongMu">Tính tổng</button>
+      <p class="alert alert-success mt-2" id="kqTinhTongMu"></p>
+
+      <p>BT 7. Nhập vào n. Tính giai thừa 1×2x...xn</p>
+      <div class="mb-3">
+        <label for="nGiaiThua" class="form-label">Số N</label>
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id="nGiaiThua"
+          aria-describedby="helpId"
+          placeholder="Vui lòng nhập số N"
+        />
+      </div>
+      <button class="btn btn-success" id="btnTinhGiaiThua">
+        Tính giai thừa
+      </button>
+      <p class="alert alert-success mt-2" id="kqTinhGiaiThua"></p>
+    </div>
+
+    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- MAIN JS -->
+    <script src="./index.js"></script>
+  </body>
+</html>

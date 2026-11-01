@@ -1,0 +1,4 @@
+// @import giúp liên kết các file scss lại với nhau giúp phân chia các thành phần css chung về 1 file
+
+@import "./header.scss";
+@import "./footer.scss";

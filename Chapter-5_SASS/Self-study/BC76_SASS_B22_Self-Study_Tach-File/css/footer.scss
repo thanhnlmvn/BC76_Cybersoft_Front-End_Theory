@@ -1,0 +1,57 @@
+$xs: 576px;
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;
+
+@mixin mediaQuery($type) {
+  @if $type == $xs {
+    @media screen and (max-width: $xs) {
+      // @content là nội dung người dùng tự điểu chỉnh
+      @content;
+    }
+  } @else if $type == $sm {
+    @media screen and (max-width: $sm) {
+      @content;
+    }
+  } @else if $type == $md {
+    @media screen and (max-width: $md) {
+      @content;
+    }
+  } @else if $type == $lg {
+    @media screen and (max-width: $lg) {
+      @content;
+    }
+  }
+}
+
+footer {
+  h1 {
+    color: green;
+    font-size: 60px;
+    @include mediaQuery($md) {
+      color: black;
+    }
+
+    @include mediaQuery($sm) {
+      color: blue;
+      font-size: 90px;
+    }
+
+    @include mediaQuery($xs) {
+      color: grey;
+      font-size: 40px;
+    }
+  }
+
+  .khung-footer {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+
+    @include mediaQuery($xs) {
+      width: 200px;
+      height: 200px;
+      background-color: green;
+    }
+  }
+}

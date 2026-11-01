@@ -1,0 +1,14 @@
+/* css theo component */
+/* Khi muốn sử dụng tailwind v4 cần truyền reference đến file đang import tailwind hoặc khai báo lại import  */
+@reference "./../index.css";
+#navigation {
+  .theHinhAnh {
+    border: 3px solid black;
+    border-radius: 12px;
+  }
+
+  .btn__primary {
+    padding: 10px 20px;
+    @apply bg-blue-500 rounded-lg;
+  }
+}

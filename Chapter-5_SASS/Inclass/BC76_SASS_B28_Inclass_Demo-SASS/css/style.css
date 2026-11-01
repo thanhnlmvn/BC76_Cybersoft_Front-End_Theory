@@ -1,0 +1,30 @@
+.banner .banner__title h2 {
+  font-size: 30px;
+}
+.banner .banner__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.banner .banner__content .banner__item {
+  border: 1px solid black;
+  padding: 5px;
+}
+.banner .banner__content .banner__item img {
+  max-width: 100%;
+}
+.banner .banner__content .banner__item h4 {
+  font-size: 25px;
+}
+.banner .banner__content .banner__item button {
+  background-color: black;
+  color: white;
+  padding: 10px 25px;
+  border: 1px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.banner .banner__content .banner__item button:hover {
+  color: black;
+  background-color: white;
+}/*# sourceMappingURL=style.css.map */
